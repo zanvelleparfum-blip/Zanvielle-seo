@@ -1,0 +1,120 @@
+name: Shopier Ürün Senkronizasyonu
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  shopier-sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Site dosyalarını al
+        uses: actions/checkout@v4
+
+      - name: Python kurulumu
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Shopier ürünlerini kontrol et
+        run: |
+          python - <<'PY'
+          import json
+          import re
+          import urllib.request
+          from html import unescape
+
+          SHOPIER = "https://www.shopier.com/parfumzanvielle"
+          DOSYA = "products.json"
+
+          print("Shopier mağazası kontrol ediliyor...")
+
+          req = urllib.request.Request(
+              SHOPIER,
+              headers={
+                  "User-Agent": "Mozilla/5.0"
+              }
+          )
+
+          with urllib.request.urlopen(req, timeout=30) as response:
+              html = response.read().decode("utf-8", errors="ignore")
+
+          print("Shopier sayfası okundu.")
+
+          # Shopier ürün bağlantılarını bul
+          links = re.findall(
+              r'href=["\']([^"\']+)["\']',
+              html,
+              re.IGNORECASE
+          )
+
+          urun_linkleri = []
+
+          for link in links:
+              link = unescape(link)
+
+              if "shopier.com/" not in link:
+                  continue
+
+              if "/parfumzanvielle" in link:
+                  continue
+
+              if link.startswith("/"):
+                  link = "https://www.shopier.com" + link
+
+              if link not in urun_linkleri:
+                  urun_linkleri.append(link)
+
+          print(f"Bulunan ürün bağlantısı: {len(urun_linkleri)}")
+
+          # Mevcut kayıtları oku
+          try:
+              with open(DOSYA, "r", encoding="utf-8") as f:
+                  mevcut = json.load(f)
+          except:
+              mevcut = []
+
+          mevcut_linkleri = {
+              urun.get("url")
+              for urun in mevcut
+              if urun.get("url")
+          }
+
+          yeni = []
+
+          for link in urun_linkleri:
+              if link not in mevcut_linkleri:
+                  yeni.append({
+                      "url": link
+                  })
+
+          print(f"Yeni ürün: {len(yeni)}")
+
+          # Yeni ürünleri mevcut listeye ekle
+          if yeni:
+              mevcut.extend(yeni)
+
+          with open(DOSYA, "w", encoding="utf-8") as f:
+              json.dump(mevcut, f, ensure_ascii=False, indent=2)
+
+          print(f"Toplam kayıt: {len(mevcut)}")
+          PY
+
+      - name: Değişiklikleri kaydet
+        run: |
+          git config user.name "Zanvielle Bot"
+          git config user.email "actions@github.com"
+
+          git add products.json
+
+          if git diff --cached --quiet; then
+            echo "Yeni ürün yok."
+          else
+            git commit -m "Shopier ürünlerini güncelle"
+            git push
+          fi
