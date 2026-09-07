@@ -1,9 +1,8 @@
-name: Shopier API Test
+jobs:
+  name: Shopier API Test
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "*/30 * * * *"
 
 permissions:
   contents: read
@@ -13,31 +12,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Shopier ürünlerini kontrol et
+      - name: Shopier API bağlantısını test et
         env:
           SHOPIER_PAT: ${{ secrets.SHOPIER_PAT }}
         run: |
           set -e
 
-          echo "Shopier API kontrol ediliyor..."
+          echo "Shopier API bağlantısı kontrol ediliyor..."
 
           RESPONSE=$(curl -sS \
             -w "\nHTTP_STATUS:%{http_code}" \
             -H "Accept: application/json" \
             -H "Authorization: Bearer ${SHOPIER_PAT}" \
-            "https://api.shopier.com/v1/products")
+            "https://api.shopier.com/v1/shop")
 
           STATUS=$(echo "$RESPONSE" | sed -n 's/.*HTTP_STATUS://p')
           BODY=$(echo "$RESPONSE" | sed '/HTTP_STATUS:/d')
 
           echo "HTTP durumu: $STATUS"
+          echo "$BODY"
 
           if [ "$STATUS" != "200" ]; then
-            echo "Shopier API bağlantısı başarısız."
-            echo "$BODY"
+            echo "Shopier API erişimi başarısız."
             exit 1
           fi
 
-          echo "Shopier API bağlantısı başarılı."
-          echo "$BODY" > shopier-products.json
-          echo "Ürün verisi alındı."
+          echo "Shopier API erişimi başarılı."
