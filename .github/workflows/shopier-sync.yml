@@ -1,5 +1,4 @@
-jobs:
-  name: Shopier API Test
+name: Shopier API Test
 
 on:
   workflow_dispatch:
