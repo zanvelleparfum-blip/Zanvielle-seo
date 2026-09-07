@@ -1,0 +1,45 @@
+name: Shopier API Test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-shopier:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Shopier API bağlantısını test et
+        env:
+          SHOPIER_PAT: ${{ secrets.SHOPIER_PAT }}
+        run: |
+          set -e
+
+          echo "Shopier API kontrol ediliyor..."
+
+          if [ -z "$SHOPIER_PAT" ]; then
+            echo "HATA: SHOPIER_PAT bulunamadı."
+            exit 1
+          fi
+
+          RESPONSE=$(curl -sS \
+            -w "\nHTTP_DURUMU:%{http_code}" \
+            -H "Accept: application/json" \
+            -H "Authorization: Bearer ${SHOPIER_PAT}" \
+            "https://api.shopier.com/v1/products")
+
+          DURUM=$(echo "$RESPONSE" | sed -n 's/.*HTTP_DURUMU://p')
+          GOVDE=$(echo "$RESPONSE" | sed '/HTTP_DURUMU:/d')
+
+          echo "HTTP DURUMU: $DURUM"
+
+          if [ "$DURUM" != "200" ]; then
+            echo "SHOPIER API HATASI:"
+            echo "$GOVDE"
+            exit 1
+          fi
+
+          echo "SHOPIER API BAĞLANTISI BAŞARILI."
+          echo "$GOVDE"
