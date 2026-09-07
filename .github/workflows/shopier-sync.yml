@@ -39,7 +39,5 @@ jobs:
           fi
 
           echo "Shopier API bağlantısı başarılı."
-
           echo "$BODY" > shopier-products.json
-
           echo "Ürün verisi alındı."
