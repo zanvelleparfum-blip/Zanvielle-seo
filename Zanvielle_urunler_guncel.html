@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Zanvielle | Extrait Parfum Koleksiyonu</title>
+<meta name="description" content="Zanvielle Extrait Parfum koleksiyonu. Kadın, erkek ve unisex parfümleri keşfedin; Shopier mağazamızdan inceleyin.">
+<meta name="google-site-verification" content="m9mAXZozOjgnZ9ggStJRCsxeEAD168Cr6c8UXV89znE">
+<style>
+:root{--gold:#d8b36a;--gold2:#f4dfaa;--cream:#f4efe4;--ink:#11100e;--muted:#a8a39a;--line:#3a3327}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0a0908;color:var(--cream);font-family:Georgia,"Times New Roman",serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;background:radial-gradient(circle at 15% 0%,#b4873b 0,transparent 28%),radial-gradient(circle at 90% 20%,#fff 0,transparent 18%);z-index:-1}
+.hero{min-height:430px;display:flex;align-items:center;justify-content:center;text-align:center;padding:70px 18px 55px;background:linear-gradient(180deg,#17130d 0,#0b0a09 78%,#0a0908 100%);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:420px;height:420px;border:1px solid #d8b36a22;border-radius:50%;box-shadow:0 0 0 28px #d8b36a08,0 0 0 56px #d8b36a05}
+.hero-inner{position:relative;z-index:2;max-width:760px}
+.kicker{font:600 11px Arial,sans-serif;letter-spacing:5px;color:var(--gold);text-transform:uppercase}
+.logo{font:500 clamp(48px,13vw,92px) Georgia,serif;letter-spacing:9px;margin:18px 0 4px;color:#f7f0df}
+.extrait{font:600 12px Arial,sans-serif;letter-spacing:7px;color:var(--gold2);text-transform:uppercase}
+.tagline{font-size:clamp(18px,4vw,25px);font-style:italic;color:#ddd4c4;margin:25px auto 28px;line-height:1.45}
+.hero-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 21px;border-radius:999px;text-decoration:none;font:700 12px Arial,sans-serif;letter-spacing:.7px}
+.btn-gold{background:linear-gradient(135deg,#b8893e,#f0d38f);color:#17120b}
+.btn-dark{border:1px solid #8b6c3d;color:var(--cream);background:#ffffff08}
+.wrap{max-width:1180px;margin:auto;padding:38px 16px 70px}
+.intro{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}
+.eyebrow{font:700 10px Arial,sans-serif;letter-spacing:3px;color:var(--gold);text-transform:uppercase}
+h1{font-size:clamp(28px,6vw,44px);font-weight:500;margin:7px 0 0}
+.intro p{max-width:420px;color:var(--muted);font:14px/1.6 Arial,sans-serif;margin:0}
+.tools{position:sticky;top:0;z-index:20;padding:12px 0;background:#0a0908ee;backdrop-filter:blur(14px);border-bottom:1px solid #ffffff0a}
+.search{position:relative;margin-bottom:12px}
+.search input{width:100%;height:54px;border:1px solid #4b402f;background:#12100d;color:#fff;border-radius:15px;padding:0 18px 0 48px;font:15px Arial,sans-serif;outline:none}
+.search input:focus{border-color:var(--gold)}
+.search:before{content:"⌕";position:absolute;left:18px;top:13px;color:var(--gold);font:26px Georgia;z-index:1}
+.filters{display:flex;gap:8px;overflow:auto;padding-bottom:2px}
+.filter{flex:0 0 auto;border:1px solid #4b402f;background:#12100d;color:#cfc6b5;border-radius:999px;padding:10px 17px;font:700 11px Arial,sans-serif;letter-spacing:.5px}
+.filter.active{background:var(--gold);border-color:var(--gold);color:#17120b}
+.meta{display:flex;justify-content:space-between;align-items:center;margin:18px 0 14px;color:var(--muted);font:12px Arial,sans-serif}
+#count{color:var(--gold2);font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.card{min-height:190px;padding:20px;border:1px solid #342e24;border-radius:19px;background:linear-gradient(145deg,#171511,#0f0e0c);display:flex;flex-direction:column;box-shadow:0 16px 45px #0008;transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:#826537}
+.card-top{display:flex;justify-content:space-between;color:var(--gold);font:700 10px Arial,sans-serif;letter-spacing:2px;text-transform:uppercase}
+.card-top i{font-style:normal;color:#9a7843}
+.card h2{font-size:18px;line-height:1.35;font-weight:500;margin:18px 0 18px}
+.card-bottom{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.card-bottom strong{font:700 17px Arial,sans-serif;color:#f4dfaa}
+.card-bottom a{font:700 11px Arial,sans-serif;color:#17120b;background:linear-gradient(135deg,#bd9047,#efd38f);padding:10px 13px;border-radius:10px;text-decoration:none}
+.card-bottom b{font-size:14px}
+.empty{display:none;text-align:center;padding:60px 20px;color:var(--muted);font:14px Arial}
+footer{border-top:1px solid var(--line);padding:34px 16px;text-align:center;color:#817b70;font:12px Arial,sans-serif}
+footer strong{display:block;color:#d7c39a;font:20px Georgia;margin-bottom:7px;letter-spacing:3px}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.intro{display:block}.intro p{margin-top:12px}}
+@media(max-width:520px){.hero{min-height:390px;padding-top:55px}.logo{letter-spacing:6px}.grid{grid-template-columns:1fr 1fr;gap:10px}.card{padding:15px;min-height:185px;border-radius:16px}.card h2{font-size:16px}.card-bottom{display:block}.card-bottom strong{display:block;margin-bottom:9px}.card-bottom a{display:block;text-align:center}}
+
+.contact-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:24px 16px 8px}
+.contact-links a{display:inline-flex;align-items:center;justify-content:center;min-width:150px;padding:12px 16px;border:1px solid #4b402f;border-radius:999px;text-decoration:none;font:700 12px Arial,sans-serif;letter-spacing:.6px;color:#f4efe4;background:#12100d}
+.contact-links a:hover{border-color:#d8b36a;color:#f4dfaa}
+</style>
+</head>
+<body>
+<header class="hero">
+<div class="hero-inner">
+<div class="kicker">Parfüm Evinize Değil, Anınıza Kalır</div>
+<div class="logo">ZANVIELLE</div>
+<div class="extrait">EXTRAIT PARFUM</div>
+<div class="tagline">Kokunu seç. Karakterini bırak.</div>
+<div class="hero-actions">
+<a class="btn btn-gold" href="https://www.shopier.com/parfumzanvielle" target="_blank" rel="noopener">SHOPIER MAĞAZASINI KEŞFET ↗</a>
+<a class="btn btn-dark" href="#koleksiyon">KOLEKSİYONA BAK</a>
+</div>
+</div>
+</header>
+<main class="wrap" id="koleksiyon">
+<section class="intro">
+<div><div class="eyebrow">Zanvielle Selection</div><h1>Kokunu seç.</h1></div>
+<p>Günlükten özel ana, kadın, erkek ve unisex seçeneklerden oluşan seçkiyi keşfet. Beğendiğin ürünü Shopier mağazamızda incele.</p>
+</section>
+<div class="tools">
+<div class="search"><input id="arama" type="search" placeholder="Parfüm adı ara..." autocomplete="off"></div>
+<div class="filters">
+<button class="filter active" data-filter="Tümü">Tümü</button>
+<button class="filter" data-filter="Kadın">Kadın</button>
+<button class="filter" data-filter="Erkek">Erkek</button>
+<button class="filter" data-filter="Unisex">Unisex</button>
+</div>
+</div>
+<div class="meta"><span id="count">113 parfüm</span><span>Zanvielle Extrait Parfum</span></div>
+<section class="grid" id="urunler">
+<article class="card" data-cat="Unisex" data-name="nishane hacivat unisex">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>nishane Hacivat unisex</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47232710" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="bdk rauge smoking">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>bdk rauge smoking</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47233243" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="silver mountain water unisex">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Silver Mountain Water unisex</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47233558" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="dior homme intense">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Dior homme intense</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47234508" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="ex nihilo - fleur narcotique unisex">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Ex Nihilo - Fleur Narcotique unisex</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47235460" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="valentino | born in roma intense uomo 50 ml erkek">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>VALENTINO | Born in Roma Intense Uomo 50 ml erkek</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47235574" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="allure homme sport 55 mi erkek">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>ALLURE HOMME SPORT 55 mI erkek</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47235638" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="givenchy l&#x27;interdit rouge
+55 ml kadın">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Givenchy L&#x27;Interdit Rouge
+55 ml kadın</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47235666" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="jean paul gaultier la belle 55 ml kadın">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Jean Paul Gaultier La Belle 55 ml kadın</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47235712" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="parfums de marly
+
+delina 50 ml kadın">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Parfums de Marly
+
+Delina 50 ml kadın</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47235741" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="le labo santal 33 unisex 50 ml">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Le Labo Santal 33 unisex 50 ml</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47237264" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="parfums de marly valaya 50 ml kadın">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Parfums de Marly Valaya 50 ml kadın</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47237641" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="nishane ani unisex 55ml">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Nishane ani unisex 55ml</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47237901" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="versace.crystal noir 50 ml kadın">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>VERSACE.Crystal Noir 50 ml kadın</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47248584" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="crystal noir parfum kadın 55 ml">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Crystal Noir Parfum kadın 55 ml</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47248734" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="nıshane kredo 50 ml unisex">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>nıshane kredo 50 ml unisex</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47248765" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="vanilla powder unisex 50 ml">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>VANILLA POWDER unisex 50 ml</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47248791" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="narciso rodri̇guez for her">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>NARCISO RODRİGUEZ for her</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47248845" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="gentle fluidity gold">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Gentle Fluidity Gold</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47248900" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="lattafa yara 55 ml kadın">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Lattafa yara 55 ml kadın</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47248941" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="si passione 50 ml kadın">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Si passione 50 ml kadın</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47248966" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="di̇or sauvage elixir 55 ml erkek">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>DİOR SAUVAGE ELIXIR 55 ml erkek</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47248999" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="versace eros flam 55 ml erkek">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>Versace Eros flam 55 ml erkek</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47249015" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="sospiro - opera grande 55ml kadın">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Sospiro - Opera Grande 55ml kadın</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47249040" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="armani prive vert malachite 55ml unisex">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Armani Prive Vert Malachite 55ml unisex</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47249077" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="nomade, chloé 55 ml kadın">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Nomade, Chloé 55 ml kadın</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47249098" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="xerjoff la capitale 55 ml erkek">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>Xerjoff La Capitale 55 ml erkek</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47249191" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="stronger with you 55 ml erkek">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>STRONGER WITH YOU 55 ml erkek</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47249233" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="ysl myslf&#x27;in 55 ml erkek parfümü">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>YSL Myslf&#x27;in 55 ml erkek parfümü</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47249407" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="jean paul gaultier divine 55 ml kadın">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Jean Paul Gaultier Divine 55 ml kadın</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47249468" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="cacharel noa edt 55 ml kadın">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Cacharel Noa EDT 55 ml kadın</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47249864" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="bdk parfums gris charnel, unisex 55ml">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>BDK Parfums Gris Charnel, unisex 55ml</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47250605" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="bdk parfums gris charnel extrait unisex 55 ml">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>BDK Parfums Gris Charnel Extrait unisex 55 ml</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47250641" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="dior sakura unisex 55 ml">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>dior sakura unisex 55 ml</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/47250664" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="cerruti 1881 erkek 55 ml">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>Cerruti 1881 erkek 55 ml</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47250691" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="blue talisman">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>blue Talisman</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47250723" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="jean paul gaultier scandal edt erkek parfüm">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>Jean Paul Gaultier Scandal Edt Erkek Parfüm</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47250757" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="hugo boss bottled absolu 55 ml erkek">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>Hugo Boss Bottled Absolu 55 ml erkek</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/47250789" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="creed aventus absolu 55ml erkek">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>Creed Aventus Absolu 55ml erkek</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47250819" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="tom ford tobacco vanille 55 ml erkek">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>Tom Ford Tobacco Vanille 55 ml erkek</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/47250841" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="acqua di parma fico di amalfi unisex 55 ml">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Acqua Di Parma Fico Di Amalfi unisex 55 ml</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47250866" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="tiziana terenzi assoluto tyl, unisex 55 ml">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Tiziana Terenzi Assoluto Tyl, unisex 55 ml</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47250886" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="tom ford eau d&#x27;ombré leather unisex 55 ml">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Tom Ford Eau d&#x27;Ombré Leather unisex 55 ml</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47250934" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="parfums de marly althaïr erkek 55 ml">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>Parfums de Marly Althaïr erkek 55 ml</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/47250953" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="gucci guilty elixir pour homme erkek 55 ml">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>Gucci Guilty Elixir Pour Homme erkek 55 ml</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47250974" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="tom ford | oud wood erkek">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>TOM FORD | Oud Wood erkek</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47250992" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="chanel chance, 55 ml kadın">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Chanel Chance, 55 ml kadın</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47251017" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="burberry goddess 55 ml kadın">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Burberry Goddess 55 ml kadın</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/47251031" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="carolina herrera 212 sexy 55 ml kadın">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Carolina Herrera 212 Sexy 55 ml kadın</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47251053" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="kilian women in gold 55 ml kadın">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>kilian women in gold 55 ml kadın</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47251074" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="diptyque tam dao unisex 55 ml">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Diptyque Tam Dao unisex 55 ml</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47251083" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="prada paradoxe intense kadın 55 ml">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Prada Paradoxe Intense kadın 55 ml</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47251098" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="kilian angels&#x27; share unisex 55 ml">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Kilian Angels&#x27; Share unisex 55 ml</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47251121" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="terenzi - tyrenum unisex 55 ml">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Terenzi - Tyrenum unisex 55 ml</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47251142" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="jo malone london - wood sage   55 ml unisex">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Jo Malone London - Wood Sage   55 ml unisex</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47251191" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="amouage love tuberose 55 ml kadn">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Amouage Love Tuberose 55 ml kadn</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/47251245" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="jean paul gaultier le beau le parfum erkek 55 ml">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>Jean Paul Gaultier Le Beau Le Parfum Erkek 55 ml</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/47251289" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="prada - paradigme (erkek 55 ml">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>PRADA - PARADIGME (erkek 55 ml</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47251317" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="initio absolute aphrodisiac edp unisex">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Initio Absolute Aphrodisiac EDP unisex</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47251340" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="tom ford - neroli portofino erkek">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>Tom Ford - Neroli Portofino erkek</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47251359" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="kilian blue moon gi̇nger dash uni̇sex">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>KILIAN BLUE MOON GİNGER DASH UNİSEX</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/47251374" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="chanel bleu de chanel edp erkek">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>Chanel Bleu de Chanel EDP erkek</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/47251402" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="lancome idole kadın">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Lancome idole kadın</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/47251421" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="kayalı vanilya 28 kadın">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>kayalı vanilya 28 kadın</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47251440" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="god of fire unisex">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>god of fire unisex</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/47252680" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="montale vanille absolu edp unisex">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Montale Vanille Absolu EDP unisex</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47253522" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="armani code 55 ml erkek">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>armani code 55 ml erkek</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47338260" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="bvlgari le gemme tygar erkek">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>Bvlgari Le Gemme Tygar erkek</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47338451" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="armani privé royal oud eau de parfum unisex">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Armani Privé Royal Oud Eau de Parfum unisex</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/47338680" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="yves saint laurent y edp parfüm erkek">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>Yves Saint Laurent Y EDP Parfüm erkek</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/47339187" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="terenzy kirke erkek">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>Terenzy kirke erkek</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47352527" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="amouge reflection  erkek">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>amouge reflection  erkek</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47366242" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="louis vuitton afternoon swim, unisex">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Louis Vuitton Afternoon Swim, unisex</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/47366481" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="orto parisi megamare erkek">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>Orto Parisi Megamare erkek</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/47366791" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="marc-antoine barrois tilia parfüm  unisex">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Marc-Antoine Barrois Tilia Parfüm  unisex</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47480674" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="armani power of you edp (kadın)">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Armani Power Of You Edp (kadın)</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47513624" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="kenzo amour edp kadın">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Kenzo Amour EDP kadın</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47705373" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="narciso rodriguez poudrée, kadın">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Narciso Rodriguez Poudrée, kadın</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47705535" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="creed asian green tea unisex">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Creed Asian Green Tea unisex</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47705729" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="amouage reflection woman,">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Amouage Reflection Woman,</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47706460" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="carolina herrera good girl blush,">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Carolina Herrera Good Girl Blush,</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47706592" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="guerlain mon guerlain kadın">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Guerlain Mon Guerlain kadın</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47708646" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="mk collection sexy amber">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>MK collection sexy amber</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47708776" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="don&#x27;t need a prince by my side to be a princess">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Don&#x27;t Need A Prince By My Side To Be A Princess</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47708844" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="histoires de parfums this is not a blue bottle 1/.2.">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Histoires de Parfums This is Not a Blue Bottle 1/.2.</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47737233" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="kadın gucci guilty elixir de parfum pour femme">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>kadın Gucci Guilty Elixir de Parfum Pour Femme</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47992890" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="ajmal amber wood edp unisex">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Ajmal Amber Wood EDP unisex</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/47992946" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="creed oud zarian erkek">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>Creed oud zarian erkek</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/48225503" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="narciso rodriguez jasmin musc">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Narciso Rodriguez Jasmin Musc</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/49651714" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="mugler alien extraintense edp intense">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Mugler Alien Extraintense EDP Intense</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/49651845" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="giardini di toscana bianco latte">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Giardini Di Toscana Bianco Latte</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/49984424" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="versace dylan blue pour femme edp">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Versace Dylan blue pour femme edp</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/50104087" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="prada paradoxe virtual flower, 55 ml kadın">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Prada Paradoxe Virtual Flower, 55 ml kadın</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/50104345" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="by kilian playing with the devil edp,55 ml unisex">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>By Kilian Playing With The Devil EDP,55 ml unisex</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/50104400" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="kilian paris angels #039; share on the rocks unisex 55 ml">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>KILIAN PARIS Angels #039; Share on the Rocks unisex 55 ml</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/50104449" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="libre berry crush kadın 55 ml">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Libre berry crush kadın 55 ml</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/50104609" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="dior fahrenheit 50 ml parfüm losyon">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Dior fahrenheit 50 ml parfüm losyon</h2>
+      <div class="card-bottom"><strong>499 TL</strong><a href="https://shopier.com/50279708" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="50 ml dior sakura 50 ml dior fahrenheit parfüm losyon">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>50 ml Dior sakura 50 ml Dior fahrenheit parfüm losyon</h2>
+      <div class="card-bottom"><strong>999 TL</strong><a href="https://shopier.com/50325317" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="50 ml dior sakura parfüm losyon">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>50 ml Dior sakura parfüm losyon</h2>
+      <div class="card-bottom"><strong>499 TL</strong><a href="https://shopier.com/50326389" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="50 ml initio musk therapy parfüm losyon">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>50 ml Initio Musk Therapy parfüm losyon</h2>
+      <div class="card-bottom"><strong>499 TL</strong><a href="https://shopier.com/50326820" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="50 ml kirke overdos esintisi parfüm losyon">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>50 ml kirke overdos esintisi parfüm losyon</h2>
+      <div class="card-bottom"><strong>499 TL</strong><a href="https://shopier.com/50338270" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="angel share on rock">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>angel share on rock</h2>
+      <div class="card-bottom"><strong>499 TL</strong><a href="https://shopier.com/50338350" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="50 ml kilian angel’s share esi̇nti̇si̇ – zanvielle extrait parfum">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>50 ml KILIAN ANGEL’S SHARE ESİNTİSİ – ZANVIELLE EXTRAIT PARFUM</h2>
+      <div class="card-bottom"><strong>499 TL</strong><a href="https://shopier.com/50338656" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="ikili set tabacco vanille esintisi">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>ikili set tabacco vanille esintisi</h2>
+      <div class="card-bottom"><strong>1.298 TL</strong><a href="https://shopier.com/50374332" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="nicolai macaron bourbon edp intense">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Nicolai Macaron Bourbon EDP Intense</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/50541990" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="55 ml creed queen of silk unisex">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>55 ml Creed Queen of Silk unisex</h2>
+      <div class="card-bottom"><strong>1.100 TL</strong><a href="https://shopier.com/50576065" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="dior j #039;adore l #039;or essence de parfum kadın">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Dior J #039;adore L #039;Or Essence de Parfum kadın</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/50577222" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="zanvielle extrait parfum – 5’li 10 ml tester seti | ücretsiz kargo">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Zanvielle Extrait Parfum – 5’li 10 ML Tester Seti | Ücretsiz Kargo</h2>
+      <div class="card-bottom"><strong>600 TL</strong><a href="https://shopier.com/50579457" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="55 ml balgamin blanc galaxi̇e (uni̇sex)">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>55 ml Balgamin BLANC GALAXİE (UNİSEX)</h2>
+      <div class="card-bottom"><strong>1.100 TL</strong><a href="https://shopier.com/50579618" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="burberry my burberry blush edp
+kadın">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Burberry My Burberry Blush EDP
+kadın</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/50597241" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Unisex" data-name="kayali yum pistachio gelato | 33 unisex">
+      <div class="card-top"><span>Unisex</span><i>✦</i></div>
+      <h2>Kayali Yum Pistachio Gelato | 33 unisex</h2>
+      <div class="card-bottom"><strong>799 TL</strong><a href="https://shopier.com/50597752" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Erkek" data-name="memo marfa  erkek">
+      <div class="card-top"><span>Erkek</span><i>✦</i></div>
+      <h2>Memo marfa  erkek</h2>
+      <div class="card-bottom"><strong>699 TL</strong><a href="https://shopier.com/50597776" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+<article class="card" data-cat="Kadın" data-name="billie eilish eilish edp (2021) kadın losyonu">
+      <div class="card-top"><span>Kadın</span><i>✦</i></div>
+      <h2>Billie Eilish Eilish EDP (2021) kadın losyonu</h2>
+      <div class="card-bottom"><strong>499 TL</strong><a href="https://shopier.com/50605135" target="_blank" rel="noopener">Keşfet <b>↗</b></a></div>
+    </article>
+</section>
+<div class="empty" id="empty">Aramana uygun parfüm bulunamadı.</div>
+</main>
+
+<div class="contact-links" aria-label="Zanvielle iletişim">
+  <a href="https://wa.me/905015762694" target="_blank" rel="noopener">WHATSAPP ↗</a>
+  <a href="https://www.instagram.com/zanvielleparfum?stkn=MTl5cTlvb3FpbTg2MA==" target="_blank" rel="noopener">INSTAGRAM ↗</a>
+</div>
+<footer><strong>ZANVIELLE</strong>EXTRAIT PARFUM · Shopier üzerinden güvenli alışveriş</footer>
+<script>
+const cards=[...document.querySelectorAll('.card')], input=document.getElementById('arama'), count=document.getElementById('count'), empty=document.getElementById('empty');
+let active='Tümü';
+function render(){
+ const q=input.value.toLocaleLowerCase('tr-TR').trim(); let n=0;
+ cards.forEach(c=>{const ok=(active==='Tümü'||c.dataset.cat===active)&&(!q||c.dataset.name.includes(q));c.style.display=ok?'flex':'none';if(ok)n++;});
+ count.textContent=n+' parfüm'; empty.style.display=n?'none':'block';
+}
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');active=b.dataset.filter;render();}));
+input.addEventListener('input',render);
+</script>
+</body>
+</html>
