@@ -172,7 +172,7 @@ body{font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
 .zanvielle-checkout-summary-title{color:var(--gold);font:700 12px Arial,sans-serif;letter-spacing:.08em;margin-bottom:8px}
 .zanvielle-checkout-summary-row{display:flex;justify-content:space-between;gap:12px;font:13px/1.6 Arial,sans-serif}
 .zanvielle-checkout-total{margin-top:8px;padding-top:8px;border-top:1px solid rgba(231,201,120,.16);color:var(--gold);font-weight:700}
-.zanvielle-checkout-note{font:11px/1.6 Arial,sans-serif;color:#a9a08f;margin:12px 0}
+.zanvielle-checkout-note{font:11px/1.6 Arial,sans-serif;color:#a9a08f;margin:12px 0}.zanvielle-checkout-fields input,.zanvielle-checkout-fields textarea{width:100%;box-sizing:border-box;border:1px solid rgba(231,201,120,.3);background:#07100e;color:#fff7df;padding:13px;border-radius:0;outline:none;font:14px Arial,sans-serif}.zanvielle-checkout-fields input::placeholder,.zanvielle-checkout-fields textarea::placeholder{color:#8f887a}.zanvielle-checkout-fields textarea{resize:vertical;min-height:92px}
 .zanvielle-checkout-pay{width:100%;min-height:52px;border:1px solid rgba(231,201,120,.8);background:linear-gradient(135deg,rgba(231,201,120,.24),rgba(231,201,120,.08));color:var(--gold);font:700 13px Arial,sans-serif;letter-spacing:.08em;cursor:pointer}
 .zanvielle-checkout-pay:disabled{opacity:.55;cursor:not-allowed}
 .zanvielle-shopier-frame-wrap{display:none;margin-top:16px;border:1px solid rgba(231,201,120,.25);height:620px;background:#fff}
@@ -2685,12 +2685,12 @@ function renderProducts(){
  $('#productGrid').innerHTML=list.map(p=>{
    const sold=Number(p.stock)<=0;
    const price=p.salePrice?`<div class="price"><span class="oldprice">${money(p.price)}</span>${money(p.salePrice)}</div>`:`<div class="price">${money(p.price)}</div>`;
-   return `<article class="card"><div class="card-img">${productPicture(p)}</div><h3>${esc(p.name)}</h3>${price}<div class="actions"><button class="btn" data-fav="${p.id}">${isFavorite(p.id)?'♥ FAVORİ':'♡ FAVORİ'}</button><button class="btn" data-detail="${p.id}">İNCELE</button><button class="btn primary" data-add="${p.id}" ${sold?'disabled':''}>SEPETE EKLE →</button></div></article>`;
+   return `<article class="card"><div class="card-img">${productPicture(p)}</div><h3>${esc(p.name)}</h3>${price}<div class="actions"><button class="btn" data-fav="${p.id}">${isFavorite(p.id)?'♥ FAVORİ':'♡ FAVORİ'}</button><button class="btn" data-detail="${p.id}">İNCELE</button><button class="btn primary" data-add="${p.id}" ${sold?'disabled':''}>SHOPIER'DE SATIN AL →</button></div></article>`;
  }).join('')||'<div class="empty">Bu koleksiyonda ürün bulunmuyor.</div>';
  document.querySelectorAll('[data-fav]').forEach(b=>b.onclick=()=>toggleFavorite(Number(b.dataset.fav)));
  document.querySelectorAll('[data-detail]').forEach(b=>b.onclick=()=>showDetail(Number(b.dataset.detail)));
  const si=$('#catalogSearch');if(si){si.value=catalogQuery;si.oninput=()=>{catalogQuery=si.value.trim();renderProducts()}} const fb=$('#favoritesOnlyBtn');if(fb){fb.classList.toggle('active',favoritesOnly);fb.onclick=()=>{favoritesOnly=!favoritesOnly;renderProducts()};fb.style.display=adminSettings().favoritesEnabled===false?'none':''} if(si)si.style.display=adminSettings().searchEnabled===false?'none':'';
- document.querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>addToCart(Number(b.dataset.add)));
+ document.querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>buyOnShopier(Number(b.dataset.add)));
 }
 let detailReturnCategory='Tümü';
 let detailHistoryActive=false;
@@ -2720,15 +2720,22 @@ function showDetail(id){
  $('#detailContent').innerHTML=`<div class="detail-img">${productPicture(p)}</div><h1 class="detail-name">${esc(p.name)}</h1>
  <div class="detail-price">${p.salePrice?`<s style="color:#8e8777;font-size:12px">${money(p.price)}</s> `:''}${money(p.salePrice||p.price)}</div>
  <div class="detail-desc">${esc(p.description)}</div><div class="notes">${(p.notes||[]).map(n=>`<div class="note"><b>${esc(n.label)}:</b> ${esc(n.text)}</div>`).join('')}</div>
- <button class="action" id="detailAdd" style="width:100%;text-align:center" ${Number(p.stock)<=0?'disabled':''}>${Number(p.stock)<=0?'STOKTA YOK':'SEPETE EKLE →'}</button>`;
+ <button class="action" id="detailAdd" style="width:100%;text-align:center" ${Number(p.stock)<=0||!p.shopierUrl?'disabled':''}>${Number(p.stock)<=0?'STOKTA YOK':(p.shopierUrl?"SHOPIER'DE SATIN AL →":'SHOPIER LİNKİ YOK')}</button>`;
  openPanel('#detailOverlay');
- const addButton=$('#detailAdd'); if(addButton) addButton.onclick=()=>addToCart(id);
+ const addButton=$('#detailAdd'); if(addButton) addButton.onclick=()=>buyOnShopier(id);
  if(!detailHistoryActive){
    detailHistoryActive=true;
    history.pushState({zanvielleDetail:id,zanvielleBase:true},'',`#urun-${id}`);
  }
  $('#detailOverlay .detail-panel').scrollTop=0;
  $('#detailBack').focus();
+}
+function buyOnShopier(id){
+ const p=PRODUCTS.find(x=>x.id===Number(id));
+ if(!p){showCartToast('Ürün bulunamadı.');return;}
+ if(Number(p.stock)<=0){showCartToast('Bu ürün şu anda stokta yok.');return;}
+ if(!p.shopierUrl){showCartToast('Bu ürün için Shopier bağlantısı bulunamadı.');return;}
+ window.location.href=p.shopierUrl;
 }
 function addToCart(id){
  const p=PRODUCTS.find(x=>x.id===id); if(!p||Number(p.stock)<=0){showCartToast('Bu ürün şu anda stokta yok.');return;}
@@ -2765,44 +2772,15 @@ function openCheckoutForm(){
  if(pay){pay.disabled=false;pay.textContent='SHOPIER İLE GÜVENLİ ÖDEMEYE GEÇ →';}
  modal.classList.add('open');document.body.style.overflow='hidden';
 }
-// ÖDEME KURALI: Mevcut Shopier ürün linklerine veya Shopier mağaza sepetine hiçbir şekilde yönlendirme yapılmaz. Ödeme yalnızca /api/shopier/checkout tarafından oluşturulan YENİ checkout oturumu ile başlatılır.
+// YENİ ÖDEME SİSTEMİ: Ödeme doğrudan ürünün kayıtlı Shopier bağlantısında açılır. Render/API checkout kullanılmaz.
 async function submitZanvielleShopierCheckout(){
  const target=getShopierCheckoutTarget();
  if(!target||!target.items.length){showCartToast('Sepetiniz boş.');return;}
  const hygiene=$('#zanvielleCheckoutHygiene');
- if(!hygiene?.checked){showCartToast('Devam etmek için hijyen bilgilendirmesini onaylamanız gerekir.');return;}
- const pay=$('#zanvielleCheckoutPay');
- if(!pay)return;
- pay.disabled=true;
- pay.textContent='GÜVENLİ ÖDEME OLUŞTURULUYOR…';
- try{
-   const payload={items:target.items.map(({p,q})=>({
-     productId:Number(p.shopierId)||null,
-     quantity:Number(q)||1,
-     name:p.name,
-     unitPrice:Number(p.salePrice||p.price)
-   }))};
-   if(payload.items.some(x=>!x.productId||x.quantity<1)) throw new Error('CHECKOUT_ITEMS_INVALID');
-   const res=await fetch('https://zanvielle-seo.onrender.com/api/shopier/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),credentials:'omit'});
-   const data=await res.json().catch(()=>null);
-   if(!res.ok||!data?.ok) throw new Error(data?.error||('CHECKOUT_HTTP_'+res.status));
-   if(data.checkoutHtml){
-     // Shopier checkout HTML otomatik POST ile doğrudan ödeme akışını başlatır.
-     // iframe kullanılmaz; Shopier sayfası kendi ödeme güvenliği ve form akışını yönetir.
-     const blob=new Blob([data.checkoutHtml],{type:'text/html;charset=utf-8'});
-     const url=URL.createObjectURL(blob);
-     window.location.assign(url);
-     setTimeout(()=>URL.revokeObjectURL(url),60000);
-     return;
-   }
-   if(data.checkoutUrl){window.location.assign(data.checkoutUrl);return;}
-   throw new Error('CHECKOUT_RESPONSE_INVALID');
- }catch(err){
-   console.error('ZANVIELLE Shopier checkout:',err);
-   pay.disabled=false;
-   pay.textContent='SHOPIER İLE GÜVENLİ ÖDEMEYE GEÇ →';
-   showCartToast(err.message==='SHOPIER_NOT_CONNECTED'?'Shopier bağlantısı henüz yapılmamış.':'Ödeme bağlantısı oluşturulamadı.');
- }
+ if(hygiene && !hygiene.checked){showCartToast('Devam etmek için hijyen bilgilendirmesini onaylamanız gerekir.');return;}
+ const first=target.items.find(x=>x.p&&x.p.shopierUrl);
+ if(!first){showCartToast('Shopier bağlantısı bulunamadı.');return;}
+ window.location.href=first.p.shopierUrl;
 }
 function closeZanvielleCheckout(){
  const modal=$('#zanvielleCheckoutModal');if(modal)modal.classList.remove('open');
@@ -2826,7 +2804,9 @@ function renderCart(){
    const hygiene=$('#hygieneConsent'),terms=$('#saleTermsConsent');
    if(!hygiene || !hygiene.checked){showCartToast('Devam etmek için parfüm ve losyonlardaki hijyen bilgilendirmesini onaylamanız gerekir.');return;}
    if(!terms || !terms.checked){showCartToast('Devam etmek için Mesafeli Satış Sözleşmesi ve Ön Bilgilendirme Formu bilgilendirmesini onaylamanız gerekir.');return;}
-   openCheckoutForm();
+   const first=Object.entries(cart).map(([id,q])=>{const p=PRODUCTS.find(x=>x.id===Number(id));return p?{p,q:Number(q)||0}:null}).find(x=>x&&x.q>0);
+   if(!first||!first.p.shopierUrl){showCartToast('Sepetteki ürün için Shopier bağlantısı bulunamadı.');return;}
+   window.location.href=first.p.shopierUrl;
  };
  document.querySelectorAll('[data-minus]').forEach(b=>b.onclick=()=>changeQty(Number(b.dataset.minus),-1));
  document.querySelectorAll('[data-plus]').forEach(b=>b.onclick=()=>changeQty(Number(b.dataset.plus),1));
@@ -3054,7 +3034,15 @@ renderCart();
  <div class="zanvielle-checkout-box">
   <div class="zanvielle-checkout-head"><h2 id="zanvielleCheckoutTitle">ZANVIELLE GÜVENLİ SİPARİŞ</h2><button class="zanvielle-checkout-close" type="button" onclick="closeZanvielleCheckout()">×</button></div>
   <div id="zanvielleCheckoutSummary" class="zanvielle-checkout-summary"></div>
-  <div class="zanvielle-checkout-note">Bu ödeme adımı yalnızca o anda ZANVIELLE sepetinizde bulunan ürünleri yeni bir Shopier ödeme oturumuna gönderir. Önceden Shopier'de kalmış sepet ürünleri kullanılmaz.</div>
+  <div class="zanvielle-checkout-note">Teslimat ve iletişim bilgilerinizi burada yalnızca bir kez girersiniz. Kart bilgileriniz ZANVIELLE sunucusuna gönderilmez; ödeme doğrudan Shopier güvenli ödeme sayfasında alınır. Önceden Shopier'de kalmış sepet ürünleri bu siparişe eklenmez.</div>
+  <div class="zanvielle-checkout-fields" style="display:grid;gap:10px;margin:14px 0">
+   <input id="zanvielleBuyerName" type="text" autocomplete="name" placeholder="Ad Soyad *" required>
+   <input id="zanvielleBuyerEmail" type="email" autocomplete="email" placeholder="E-posta *" required>
+   <input id="zanvielleBuyerPhone" type="tel" autocomplete="tel" placeholder="Telefon *" required>
+   <input id="zanvielleBuyerCity" type="text" autocomplete="address-level2" placeholder="İl *" required>
+   <input id="zanvielleBuyerPostcode" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="Posta kodu *" required>
+   <textarea id="zanvielleBuyerAddress" autocomplete="street-address" placeholder="Açık adres *" rows="4" required></textarea>
+  </div>
   <label style="display:flex;gap:9px;align-items:flex-start;font:12px/1.55 Arial,sans-serif;color:#d8cfbd;margin:12px 0"><input id="zanvielleCheckoutHygiene" type="checkbox" style="margin-top:3px"> <span>Parfüm ve losyonlarda hijyen bilgilendirmesini okudum ve anladım.</span></label>
   <form id="zanvielleShopierForm" method="POST" target="zanvielleShopierFrame">
    <input type="hidden" id="zanvielleShopierProductId" name="product_id">
