@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://zanvielleparfum.com.tr/sitemap.xml
